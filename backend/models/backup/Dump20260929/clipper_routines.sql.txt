@@ -1,0 +1,311 @@
+CREATE DATABASE  IF NOT EXISTS `clipper` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `clipper`;
+-- MySQL dump 10.13  Distrib 8.0.45, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: clipper
+-- ------------------------------------------------------
+-- Server version	8.0.45
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Temporary view structure for view `view_training_groups_pilots`
+--
+
+DROP TABLE IF EXISTS `view_training_groups_pilots`;
+/*!50001 DROP VIEW IF EXISTS `view_training_groups_pilots`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `view_training_groups_pilots` AS SELECT 
+ 1 AS `n_id`,
+ 1 AS `s_id_internal_group`,
+ 1 AS `d_date_start`,
+ 1 AS `d_date_end`,
+ 1 AS `s_group_description`,
+ 1 AS `n_candidates`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `view_system_users`
+--
+
+DROP TABLE IF EXISTS `view_system_users`;
+/*!50001 DROP VIEW IF EXISTS `view_system_users`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `view_system_users` AS SELECT 
+ 1 AS `n_id`,
+ 1 AS `s_id`,
+ 1 AS `s_email`,
+ 1 AS `s_token_confirmation`,
+ 1 AS `d_created_date`,
+ 1 AS `s_ip_registration`,
+ 1 AS `d_confirm_date`,
+ 1 AS `b_active`,
+ 1 AS `s_role`,
+ 1 AS `s_link`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `view_training_groups_cc`
+--
+
+DROP TABLE IF EXISTS `view_training_groups_cc`;
+/*!50001 DROP VIEW IF EXISTS `view_training_groups_cc`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `view_training_groups_cc` AS SELECT 
+ 1 AS `n_id`,
+ 1 AS `s_id_internal_group`,
+ 1 AS `d_date_start`,
+ 1 AS `d_date_end`,
+ 1 AS `s_group_description`,
+ 1 AS `n_candidates`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `view_training_candidates_cc`
+--
+
+DROP TABLE IF EXISTS `view_training_candidates_cc`;
+/*!50001 DROP VIEW IF EXISTS `view_training_candidates_cc`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `view_training_candidates_cc` AS SELECT 
+ 1 AS `n_id`,
+ 1 AS `s_id_internal_group`,
+ 1 AS `s_name`,
+ 1 AS `s_surname`,
+ 1 AS `d_date_created_at`,
+ 1 AS `b_status`,
+ 1 AS `s_email`,
+ 1 AS `b_send_email`,
+ 1 AS `s_id_training_student`,
+ 1 AS `b_safety_breafing`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `view_new_users`
+--
+
+DROP TABLE IF EXISTS `view_new_users`;
+/*!50001 DROP VIEW IF EXISTS `view_new_users`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `view_new_users` AS SELECT 
+ 1 AS `n_id`,
+ 1 AS `s_id`,
+ 1 AS `s_email`,
+ 1 AS `s_token_confirmation`,
+ 1 AS `d_created_date`,
+ 1 AS `s_ip_registration`,
+ 1 AS `d_confirm_date`,
+ 1 AS `b_active`,
+ 1 AS `s_role`,
+ 1 AS `s_link`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `view_training_candidates_pilots`
+--
+
+DROP TABLE IF EXISTS `view_training_candidates_pilots`;
+/*!50001 DROP VIEW IF EXISTS `view_training_candidates_pilots`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `view_training_candidates_pilots` AS SELECT 
+ 1 AS `n_id`,
+ 1 AS `s_id_internal_group`,
+ 1 AS `s_name`,
+ 1 AS `s_surname`,
+ 1 AS `d_date_created_at`,
+ 1 AS `b_status`,
+ 1 AS `s_email`,
+ 1 AS `b_send_email`,
+ 1 AS `s_id_training_student`,
+ 1 AS `b_safety_breafing`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `view_admin_report`
+--
+
+DROP TABLE IF EXISTS `view_admin_report`;
+/*!50001 DROP VIEW IF EXISTS `view_admin_report`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `view_admin_report` AS SELECT 
+ 1 AS `Number`,
+ 1 AS `NameSurname1`,
+ 1 AS `Surname`,
+ 1 AS `Name`,
+ 1 AS `S1`,
+ 1 AS `S2`,
+ 1 AS `Groupname`,
+ 1 AS `P1`,
+ 1 AS `GroupnameSurname1`,
+ 1 AS `P2`,
+ 1 AS `P3`,
+ 1 AS `P4`,
+ 1 AS `Start_date`,
+ 1 AS `End_date`,
+ 1 AS `P5`,
+ 1 AS `P6`,
+ 1 AS `P7`,
+ 1 AS `GroupnameSurname2`,
+ 1 AS `P8`,
+ 1 AS `P9`,
+ 1 AS `P10`,
+ 1 AS `QRcode`,
+ 1 AS `P11`,
+ 1 AS `s_email`,
+ 1 AS `s_type`,
+ 1 AS `s_id_internal_group`,
+ 1 AS `d_date_start`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Final view structure for view `view_training_groups_pilots`
+--
+
+/*!50001 DROP VIEW IF EXISTS `view_training_groups_pilots`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`admin`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_training_groups_pilots` AS select `g`.`n_id` AS `n_id`,`g`.`s_id_internal_group` AS `s_id_internal_group`,date_format(`g`.`d_date_start`,'%Y-%m-%d %H:%i') AS `d_date_start`,date_format(`g`.`d_date_end`,'%Y-%m-%d %H:%i') AS `d_date_end`,`g`.`s_group_description` AS `s_group_description`,(select count(`c`.`s_id_internal_group`) from `training_candidates` `c` where ((`c`.`s_id_internal_group` = `g`.`s_id_internal_group`) and (`c`.`b_status` = 1))) AS `n_candidates` from `training_groups` `g` where ((`g`.`b_status` = 1) and (`g`.`s_type` = 'Pilot') and (`g`.`d_date_start` > curdate())) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `view_system_users`
+--
+
+/*!50001 DROP VIEW IF EXISTS `view_system_users`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`admin`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_system_users` AS select `users`.`n_id` AS `n_id`,`users`.`s_id` AS `s_id`,`users`.`s_email` AS `s_email`,`users`.`s_token_confirmation` AS `s_token_confirmation`,`users`.`d_created_date` AS `d_created_date`,`users`.`s_ip_registration` AS `s_ip_registration`,`users`.`d_confirm_date` AS `d_confirm_date`,`users`.`b_active` AS `b_active`,`users`.`s_role` AS `s_role`,`users`.`s_link` AS `s_link` from `users` where ((`users`.`b_active` = 1) and (`users`.`s_role` <> 'no_role')) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `view_training_groups_cc`
+--
+
+/*!50001 DROP VIEW IF EXISTS `view_training_groups_cc`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`admin`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_training_groups_cc` AS select `g`.`n_id` AS `n_id`,`g`.`s_id_internal_group` AS `s_id_internal_group`,date_format(`g`.`d_date_start`,'%Y-%m-%d %H:%i') AS `d_date_start`,date_format(`g`.`d_date_end`,'%Y-%m-%d %H:%i') AS `d_date_end`,`g`.`s_group_description` AS `s_group_description`,(select count(`c`.`s_id_internal_group`) from `training_candidates` `c` where ((`c`.`s_id_internal_group` = `g`.`s_id_internal_group`) and (`c`.`b_status` = 1))) AS `n_candidates` from `training_groups` `g` where ((`g`.`b_status` = 1) and (`g`.`s_type` = 'Cabin Crew') and (`g`.`d_date_start` > curdate())) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `view_training_candidates_cc`
+--
+
+/*!50001 DROP VIEW IF EXISTS `view_training_candidates_cc`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`admin`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_training_candidates_cc` AS select `training_candidates`.`n_id` AS `n_id`,`training_candidates`.`s_id_internal_group` AS `s_id_internal_group`,`training_candidates`.`s_name` AS `s_name`,`training_candidates`.`s_surname` AS `s_surname`,`training_candidates`.`d_date_created_at` AS `d_date_created_at`,`training_candidates`.`b_status` AS `b_status`,`training_candidates`.`s_email` AS `s_email`,`training_candidates`.`b_send_email` AS `b_send_email`,`training_candidates`.`s_id_training_student` AS `s_id_training_student`,`training_candidates`.`b_safety_breafing` AS `b_safety_breafing` from `training_candidates` where ((`training_candidates`.`b_status` = '1') and `training_candidates`.`s_id_internal_group` in (select `training_groups`.`s_id_internal_group` from `training_groups` where ((`training_groups`.`b_status` = 1) and (`training_groups`.`s_type` = 'Cabin Crew') and (`training_groups`.`d_date_start` > curdate())))) order by `training_candidates`.`s_id_internal_group` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `view_new_users`
+--
+
+/*!50001 DROP VIEW IF EXISTS `view_new_users`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`admin`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_new_users` AS select `users`.`n_id` AS `n_id`,`users`.`s_id` AS `s_id`,`users`.`s_email` AS `s_email`,`users`.`s_token_confirmation` AS `s_token_confirmation`,`users`.`d_created_date` AS `d_created_date`,`users`.`s_ip_registration` AS `s_ip_registration`,`users`.`d_confirm_date` AS `d_confirm_date`,`users`.`b_active` AS `b_active`,`users`.`s_role` AS `s_role`,`users`.`s_link` AS `s_link` from `users` where ((`users`.`b_active` = 0) and (`users`.`s_role` = 'no_role')) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `view_training_candidates_pilots`
+--
+
+/*!50001 DROP VIEW IF EXISTS `view_training_candidates_pilots`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`admin`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_training_candidates_pilots` AS select `training_candidates`.`n_id` AS `n_id`,`training_candidates`.`s_id_internal_group` AS `s_id_internal_group`,`training_candidates`.`s_name` AS `s_name`,`training_candidates`.`s_surname` AS `s_surname`,`training_candidates`.`d_date_created_at` AS `d_date_created_at`,`training_candidates`.`b_status` AS `b_status`,`training_candidates`.`s_email` AS `s_email`,`training_candidates`.`b_send_email` AS `b_send_email`,`training_candidates`.`s_id_training_student` AS `s_id_training_student`,`training_candidates`.`b_safety_breafing` AS `b_safety_breafing` from `training_candidates` where ((`training_candidates`.`b_status` = '1') and `training_candidates`.`s_id_internal_group` in (select `training_groups`.`s_id_internal_group` from `training_groups` where ((`training_groups`.`b_status` = 1) and (`training_groups`.`s_type` = 'Pilot') and (`training_groups`.`d_date_start` > curdate())))) order by `training_candidates`.`s_id_internal_group` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `view_admin_report`
+--
+
+/*!50001 DROP VIEW IF EXISTS `view_admin_report`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`admin`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_admin_report` AS select `tc`.`n_id` AS `Number`,concat_ws(' ',`tc`.`s_surname`,`tc`.`s_name`) AS `NameSurname1`,`tc`.`s_surname` AS `Surname`,`tc`.`s_name` AS `Name`,'' AS `S1`,'' AS `S2`,`tg`.`s_id_internal_group` AS `Groupname`,'#CRED' AS `P1`,concat_ws(' ',`tg`.`s_id_internal_group`,convert(`tc`.`s_surname` using utf8mb4)) AS `GroupnameSurname1`,'True' AS `P2`,'False' AS `P3`,'0' AS `P4`,date_format(`tg`.`d_date_start`,'%Y-%m-%d %H:%i') AS `Start_date`,date_format(`tg`.`d_date_end`,'%Y-%m-%d %H:%i') AS `End_date`,'1' AS `P5`,'0' AS `P6`,'#FACTOR' AS `P7`,concat_ws(' ',`tg`.`s_id_internal_group`,convert(`tc`.`s_surname` using utf8mb4)) AS `GroupnameSurname2`,'0' AS `P8`,'16' AS `P9`,'16' AS `P10`,`tc`.`s_id_training_student` AS `QRcode`,'False' AS `P11`,`tc`.`s_email` AS `s_email`,`tg`.`s_type` AS `s_type`,`tg`.`s_id_internal_group` AS `s_id_internal_group`,`tg`.`d_date_start` AS `d_date_start` from (`training_groups` `tg` join `training_candidates` `tc` on((trim(`tg`.`s_id_internal_group`) = trim(`tc`.`s_id_internal_group`)))) where ((`tg`.`b_status` = 1) and (`tc`.`b_status` = 1)) order by `tc`.`n_id` desc,`tg`.`s_id_internal_group` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2026-09-29 13:47:28

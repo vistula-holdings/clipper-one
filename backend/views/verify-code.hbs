@@ -1,0 +1,40 @@
+<div class="container mt-5" style="max-width: 400px;">
+  <h2 class="text-center mb-4">{{t "verifyTitle"}}</h2>
+  <p class="text-muted text-center">{{t "verifySubtitle"}} <strong>{{email}}</strong></p>
+
+  <form method="POST" action="/login/verify/check" novalidate id="verifyForm">
+    <input type="hidden" name="email" value="{{email}}">
+
+    <div class="mb-3">
+      <label for="inputCode" class="form-label">{{t "labelInputCode"}}</label>
+      <input 
+        type="text" 
+        class="form-control text-center fs-2" 
+        id="inputCode" 
+        name="code" 
+        maxlength="6" 
+        pattern="\d{6}" 
+        placeholder="000000" 
+        required
+      >
+      <div class="invalid-feedback text-center">{{t "invalidCodeFormat"}}</div>
+    </div>
+
+    <button type="submit" class="btn btn-success w-100 fs-5" id="btnVerify">{{t "textBtnVerify"}}</button>
+  </form>
+  
+  <div class="text-center mt-3">
+    <a href="/login" class="text-decoration-none">{{t "backToLogin"}}</a>
+  </div>
+</div>
+
+<script>
+  // Validación visual rápida de Bootstrap
+  document.getElementById('verifyForm').addEventListener('submit', function(event) {
+    if (!this.checkValidity()) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    this.classList.add('was-validated');
+  }, false);
+</script>

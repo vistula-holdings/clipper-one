@@ -1,0 +1,17 @@
+services:
+  backend:
+    build: ./backend
+    container_name: clipper-one
+    restart: always
+    ports:
+      - "3500:3500"
+    env_file:
+      - ./backend/.env  # <-- Docker read all variables from .env file automatically
+      
+    # DB configuration
+    environment:
+      - PORT=3500
+      - DB_HOST=host.docker.internal # Mysql outside Docker and access to Windows locally
+      - DB_USER=admin
+      - DB_PASSWORD=12qwasZX$
+      - DB_NAME=clipper

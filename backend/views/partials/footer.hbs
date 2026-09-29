@@ -1,0 +1,21 @@
+<br>
+<hr>
+
+<footer class="footer mt-auto py-3 bg-light border-top">
+    <div class="container text-center">
+        <span class="text-muted">{{t "app_name"}} © {{ n_year }} Ver: {{ s_version }} | </span>
+        
+        {{#if isProduction}}
+            <span class="badge bg-success"> PRODUCTION MODE (PORT: 3500)</span>
+        {{else}}
+            <span class="badge bg-warning text-dark"> DEVELOPMENT MODE (PORT: 3500)</span>
+        {{/if}}
+        
+        <small class="d-block text-secondary">System status: Online</small>
+        <br>
+        <small class="d-block text-secondary">Powered by Alfredo Celso</small>
+        <br>
+        <small class="d-block text-secondary">Stack: NodeJs - Express - Expres Handle-bars - MySql</small>
+
+    </div>
+</footer>

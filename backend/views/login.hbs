@@ -1,0 +1,87 @@
+<form novalidate id="loginForm" method="POST" action="/login/request-code/start">
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="togglePasswordFields">
+    <label class="form-check-label" for="togglePasswordFields">{{t "checkbox_text"}}</label>
+  </div>
+
+  <div class="mb-3">
+    <label for="inputEmail1" class="form-label">{{t "labelInputEmail1"}}</label>
+    <input type="email" class="form-control" id="inputEmail1" name="email" required aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">{{t "emailHelpText"}}</div>
+    <div class="invalid-feedback">{{t "invalidEmailError"}}</div>
+  </div>
+
+
+  <div class="mb-3 d-none" id="passwordSection">
+    <label for="inputPassword1" class="form-label">{{t "labelInputPassword1"}}</label>
+    <div class="input-group">
+      <input type="password" class="form-control" id="inputPassword1" name="password">
+      <button class="btn btn-outline-secondary" type="button" id="btnToggleVisibility">
+        <i class="bi bi-eye" id="eyeIcon"></i> <span id="textToggleVisibility">{{t "showPasswordText"}}</span>
+      </button>
+    </div>
+    <div class="invalid-feedback">{{t "invalidPasswordError"}}</div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" id="btnSubmit1">{{t "textBtnSubmit1"}}</button>
+</form>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const checkbox = document.getElementById('togglePasswordFields');
+    const passwordSection = document.getElementById('passwordSection');
+    const passwordInput = document.getElementById('inputPassword1');
+    const btnVisibility = document.getElementById('btnToggleVisibility');
+    const textVisibility = document.getElementById('textToggleVisibility');
+    const form = document.getElementById('loginForm');
+
+    // FUNCTION 1: Show / Hide password with Checkbox
+    checkbox.addEventListener('change', function() {
+      if (this.checked) {
+        passwordSection.classList.remove('d-none'); // Show
+        passwordInput.setAttribute('required', 'required'); // REQUIRED
+      } else {
+        passwordSection.classList.add('d-none'); // Hide
+        passwordInput.removeAttribute('required'); // NOT REQUIRED
+        passwordInput.value = ''; // Clean
+      }
+    });
+
+    // 🔒 FUNCTION 2: Shift input (text/password) to Show/Hide password
+    btnVisibility.addEventListener('click', function() {
+      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+      
+      // Cambiar el texto en las llaves de traduccion.
+      textVisibility.textContent = type === 'password' ? "{{t 'showPasswordText'}}" : "{{t 'hidePasswordText'}}";
+    });
+
+    // FUNCTION 3: Validation form
+    form.addEventListener('submit', function(event) {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    }, false);
+  });
+</script>
+
+<!--
+<form>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">{{t "checkbox_text"}}</label>
+  </div>
+  <div class="mb-3">
+    <label for="inputEmail1" class="form-label">{{t "labelInputEmail1"}}</label>
+    <input type="email" class="form-control" id="inputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">{{t "emailHelpText"}}</div>
+  </div>
+  <div class="mb-3">
+    <label for="inputPassword1" class="form-label">{{t "labelInputPassword1"}}</label>
+    <input type="password" class="form-control" id="inputPassword1">
+  </div>
+  <button type="submit" class="btn btn-primary" id="btnSubmit1">{{t "textBtnSubmit1"}}</button>
+</form>
+-->

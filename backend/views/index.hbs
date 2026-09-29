@@ -1,0 +1,53 @@
+<h1>{{t "app_name"}}</h1>
+<p>{{t "app_slogan"}} </p>
+
+<!-- Start context of the body -->
+<div class="row">
+  <div class="col-sm-6 mb-3 mb-sm-0">
+
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{t "card_title1"}}</h5>
+        <p class="card-text">{{t "card_text1"}}</p>
+        <a href="/users/start/?lng={{currentLng}}&role={{viewData.s_role}}&token={{viewData.s_id}}" class="btn btn-primary">{{t "card_button1"}}</a>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-sm-6">
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{t "card_title2"}}</h5>
+        <p class="card-text">{{t "card_text2"}}</p>
+        <a href="/admin-reports/start/?lng={{currentLng}}&role={{viewData.s_role}}&token={{viewData.s_id}}" class="btn btn-primary">{{t "card_button2"}}</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- End of the context of the body -->
+
+<div class="toast-container" style="position: absolute; top: 10px; right: 10px;" id="myToast">
+    <div class="{{toastClass}}">
+        <div class="toast-body">
+            {{t toastMessage}}
+        </div>
+    </div>
+</div>
+
+<script>
+    function myToast(){
+        //alert("Page is loaded");
+        var element = document.getElementById("myToast");
+
+        /* Create toast instance */
+        var myToast = new bootstrap.Toast(element, {
+            delay: 3000
+        });
+        myToast.show();
+    };
+
+</script>

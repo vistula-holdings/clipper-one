@@ -1,0 +1,109 @@
+<div class="alert alert-primary" role="alert"> REPORTS  </div>
+<h1>{{t "admin_report_h1"}}</h1>
+<span> <a class="btn btn-outline-secondary btn-sm" aria-current="page" href="/index/start?lng={{currentLng}}&role={{viewData.user.s_role}}&token={{viewData.user.s_id}}">{{t "admin_report_ahref1"}}</a> </span>
+{{#if viewData.init}}
+<p></p>
+<form novalidate id="listForm" class="row g-3" method="POST" action="/admin-reports/filter-group?lng={{currentLng}}&role={{viewData.user.s_role}}&token={{viewData.user.s_id}}">
+    <div class="col-md-6">
+        <select class="form-select" name="listGroup">
+        {{#each viewData.activeGroups}}
+            <option value="{{this.s_groups}}">{{this.s_groups}}</option>
+        {{/each}}
+        </select>
+    </div>
+    <div class="col-md-6">
+      <button type="submit" class="btn btn-primary" id="btnSubmit1">{{t "textBtnSubmit1"}}</button>
+    </div>    
+</form>
+
+<div style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+<table style="width: 100%; white-space: nowrap;">
+    <!-- <th scope="col">{{t "admin_report_table1_col0"}} </th> -->
+  <thead>
+    <tr>
+      <th scope="col">Number</th>
+      <th scope="col">Name and Surname</th>
+      <th scope="col">Surname</th>
+      <th scope="col">Name</th>
+      <th scope="col"> </th>
+      <th scope="col"> </th>
+      <th scope="col">Group name</th>
+      <th scope="col">Permanent</th>
+      <th scope="col">Group name and Surname</th>
+      <th scope="col">Permanent</th>
+      <th scope="col">Permanent</th>
+      <th scope="col">Permanent</th>
+      <th scope="col">START date</th>
+      <th scope="col">END date</th>
+      <th scope="col">Permanent</th>
+      <th scope="col">Permanent</th>
+      <th scope="col">Permanent</th>
+      <th scope="col">Group name and Surname</th>
+      <th scope="col">Permanent</th>
+      <th scope="col">Permanent</th>
+      <th scope="col">Permanent</th>
+      <th scope="col">QR code</th>
+      <th scope="col">Permanent</th>
+      <th scope="col">e-mail</th>
+    </tr>
+  </thead>
+    <tbody>
+        {{#each viewData.activeCandidates}}
+            <tr>
+            <th>{{Number}}</th> 
+            <td>{{NameSurname1}}</td>
+            <td>{{Surname}}</td>
+            <td>{{Name}}</td>
+            <td>{{S1}}</td>
+            <td>{{S2}}</td>
+            <td>{{Groupname}}</td>
+            <td>{{P1}}</td>
+            <td>{{GroupnameSurname1}}</td>
+            <td>{{P2}}</td>
+            <td>{{P3}}</td>
+            <td>{{P4}}</td>
+            <td>{{formatDate Start_date}}</td>
+            <td>{{formatDate End_date}}</td>
+            <td>{{P5}}</td>
+            <td>{{P6}}</td>
+            <td>{{P7}}</td>
+            <td>{{GroupnameSurname2}}</td>
+            <td>{{P8}}</td>
+            <td>{{P9}}</td>
+            <td>{{P10}}</td>
+            <td>{{QRcode}}</td>
+            <td>{{P11}}</td>
+            <td>{{s_email}}</td>
+            </tr>
+        {{else}}
+            <tr>
+            <td colspan="5" class="text-center text-muted py-3">
+                {{t "admin_report_msg4"}}
+            </td>
+            </tr>
+        {{/each}}  
+    </tbody>
+</table>
+</div>
+{{/if}}
+
+<div class="toast-container" style="position: absolute; top: 10px; right: 10px;" id="myToast">
+    <div class="{{viewData.toastClass}}">
+        <div class="toast-body">
+            {{t viewData.toastMessage}}
+        </div>
+    </div>
+</div>
+
+<script>
+  function myToast(){
+      //alert("Page is loaded");
+      var element = document.getElementById("myToast");
+
+      /* Create toast instance */
+      var myToast = new bootstrap.Toast(element, {
+          delay: 3000
+      });
+      myToast.show();
+  };
+</script>

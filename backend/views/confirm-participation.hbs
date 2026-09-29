@@ -1,0 +1,98 @@
+<div class="container my-5" style="max-width: 600px;">
+  <div class="card shadow-sm border-0">
+    <div class="card-body p-4">
+      <h3 class="text-center text-primary mb-4">ENTERAIR TRAINING CENTER</h3>
+
+      {{#if viewData.errorMessage}}
+        <div class="alert alert-danger">{{viewData.errorMessage}}</div>
+      {{/if}}
+  
+      {{#if viewData.warningMessage}}
+        <div class="alert alert-warning">{{warning.Message}}</div>
+      {{/if}}
+
+      {{#if viewData.isNewRecord}}
+        <!-- Step 1: Confirmation of info and policies -->
+	      <h4 class="mb-3 text-primary">Potwierdź obecność</h4>
+        <form action="/confirm-participation/register-confirmation?lng={{currentLng}}" method="POST">
+          <div class="mb-3">
+            <label class="form-label">e-mail</label>
+            <input type="email" name="useremail" class="form-control" value="{{viewData.candidate.s_email}}" readonly>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Imię / Nazwisko</label>
+            <input type="text" name="nameConfirmation" class="form-control" value="{{viewData.candidate.s_name}} {{viewData.candidate.s_surname}}" readonly>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Grupa</label>
+            <input type="text" name="groupConfirmation" class="form-control" value="{{viewData.candidate.s_id_internal_group}}" readonly>
+          </div>
+
+          <div class="mb-3">
+            <input type="text" name="codeId" class="form-control" value="{{viewData.candidate.s_id_training_student}}" readonly>
+          </div>
+          
+          <!--
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" name="rodoAccepted" required id="rodo1">
+            <label class="form-check-label" for="rodo1">Akceptuję zasady RODO, <a href="https://uodo.gov.pl/pl" target="_blank" rel="noopener noreferrer" >Read</a> </label>
+          </div>
+
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" name="safetyAccepted" required id="safety1">
+            <label class="form-check-label" for="safety1">Akceptuję zasady Safety Briefing, <a href="#" target="_blank" rel="noopener noreferrer" >Read</a> </label>
+          </div>
+          -->
+
+          <button type="submit" class="btn btn-success w-100">{{t "textBtnSubmit1"}}</button>
+        </form>
+      {{else}}
+        <!-- Step 2: Search form -->
+        <form action="/confirm-participation/confirm?lng={{currentLng}}" method="POST">
+          <div class="mb-3">
+            <label class="form-label">Podaj swój adres e-mail:</label>
+            <input type="email" name="useremail" class="form-control" placeholder="email@domain.com" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Potwierdź</button>
+        </form>
+      
+      {{/if}}
+
+      {{#if isQrCode}}
+        <!-- Step 3: Succesful confirmation -->
+        <div class="text-center py-3">
+          <div class="alert alert-success">
+            <h4 class="alert-heading">Potwierdzenie zarejestrowane!</h4>
+            <p>Your Id został wygenerowany..</p>
+            <hr>
+            <p class="mb-0 font-weight-bold fs-5">QR ID: {{candidate.s_qr_id}}</p>
+          </div>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</div>
+
+<div class="toast-container" style="position: absolute; top: 10px; right: 10px;" id="myToast">
+    <div class="{{viewData.toastClass}}">
+        <div class="toast-body">
+            {{t viewData.toastMessage}}
+        </div>
+    </div>
+</div>
+
+<script>
+    function myToast(){
+        //alert("Page is loaded");
+        var element = document.getElementById("myToast");
+
+        /* Create toast instance */
+        var myToast = new bootstrap.Toast(element, {
+            delay: 3000
+        });
+        myToast.show();
+    };
+
+</script>

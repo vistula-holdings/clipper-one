@@ -1,0 +1,16 @@
+# Ignore Node dependecies
+node_modules/
+npm-debug.log*
+
+# Ignore variables
+border-env
+.env
+.env.local
+.env.production
+
+# Ignore sistem files
+.DS_Store
+
+# Docker files/local logs
+*.log
+docker-compose.override.yml

@@ -1,0 +1,99 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center">
+    <h2> {{t "user_h4"}}</h2>
+    <a href="/index/start?lng={{currentLng}}&role={{viewData.s_role}}&token={{viewData.s_id}}" class="btn btn-outline-secondary btn-sm">{{t "user_ahref1"}}</a>
+  </div>
+  <p class="text-muted">{{t "user_label5"}}</p>
+  <hr>
+  <h3> {{t "user_label3"}}</h3>
+  <table class="table table-striped table-hover align-middle mt-3">
+    <thead class="table-dark">
+      <tr>
+        <th>{{t "user_table_col1"}}</th>
+        <th>{{t "user_table_col2"}}</th>
+        <th>{{t "user_table_col3"}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each viewData.activeUsers}}
+        <tr>
+          <td><strong>{{s_email}}</strong></td>
+          <td>
+            <span class="badge 
+              {{#if (eq s_role 'admin')}}bg-danger
+              {{else if (eq s_role 'org-pilot')}}bg-primary
+              {{else if (eq s_role 'org-cabincrew')}}bg-warning text-dark
+              {{else}}bg-secondary{{/if}}">
+              {{s_role}}
+            </span>
+          </td>
+          <td>
+            <form method="POST" action="/users/update-role" class="d-flex gap-2 align-items-center">
+              <input type="hidden" name="userId" value="{{s_id}}">
+              
+              <select name="inputRole" class="form-select form-select-sm" style="width: auto;">
+                <option value="no_role" {{#if (eq s_role 'no_role')}}selected{{/if}}>Limbo (No Role)</option>
+                <option value="org-pilot" {{#if (eq s_role 'org-pilot')}}selected{{/if}}>Pilot Coordinator (✈️)</option>
+                <option value="org-cabincrew" {{#if (eq s_role 'org-cabincrew')}}selected{{/if}}>Cabin Crew Coordinator (🧑‍✈️)</option>
+                <option value="admin" {{#if (eq s_role 'admin')}}selected{{/if}}>Global Admin (👑)</option>
+              </select>
+
+              <button type="submit" class="btn btn-sm btn-success">{{t "user_button1"}}</button>
+            </form>
+          </td>
+        </tr>
+      {{else}}
+        <tr>
+          <td colspan="3" class="text-center text-muted">{{t "user_label1"}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <br>
+  <hr>
+  <h3> {{t "user_label4"}}</h3>
+  <table class="table table-striped table-hover align-middle mt-3">
+    <thead class="table-success">
+      <tr>
+        <th>Email</th>
+        <th>Current Role</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each viewData.systemUsers}}
+        <tr>
+          <td><strong>{{s_email}}</strong></td>
+          <td>
+            <span class="badge 
+              {{#if (eq s_role 'admin')}}bg-danger
+              {{else if (eq s_role 'org-pilot')}}bg-primary
+              {{else if (eq s_role 'org-cabincrew')}}bg-warning text-dark
+              {{else}}bg-secondary{{/if}}">
+              {{s_role}}
+            </span>
+          </td>
+          <td>
+            <form method="POST" action="/users/update-role" class="d-flex gap-2 align-items-center">
+              <input type="hidden" name="userId" value="{{s_id}}">
+              
+              <select name="inputRole" class="form-select form-select-sm" style="width: auto;">
+                <option value="no_role" {{#if (eq s_role 'no_role')}}selected{{/if}}>Limbo (No Role)</option>
+                <option value="org-pilot" {{#if (eq s_role 'org-pilot')}}selected{{/if}}>Pilot Coordinator (✈️)</option>
+                <option value="org-cabincrew" {{#if (eq s_role 'org-cabincrew')}}selected{{/if}}>Cabin Crew Coordinator (🧑‍✈️)</option>
+                <option value="admin" {{#if (eq s_role 'admin')}}selected{{/if}}>Global Admin (👑)</option>
+              </select>
+
+              <button type="submit" class="btn btn-sm btn-success">{{t "user_button2"}}</button>
+            </form>
+          </td>
+        </tr>
+      {{else}}
+        <tr>
+          <td colspan="3" class="text-center text-muted">{{t "user_label2"}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+</div>

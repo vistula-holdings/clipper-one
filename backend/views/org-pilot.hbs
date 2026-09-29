@@ -1,0 +1,347 @@
+<div class="alert alert-primary" role="alert"> PILOTS </div>
+{{#if viewData.init}}
+<h1>{{t "pilot_cc_h1"}}</h1>
+<span> <a class="btn btn-outline-secondary btn-sm" aria-current="page" href="/org-pilot/addGroup?lng={{currentLng}}&role={{viewData.user.s_role}}&token={{viewData.user.s_id}}">{{t "pilot_cc_form1_label0"}}</a> </span>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">{{t "pilot_cc_table1_col0"}}</th>
+      <th scope="col">{{t "pilot_cc_table1_col1"}}</th>
+      <th scope="col">{{t "pilot_cc_table1_col2"}}</th>
+      <th scope="col">{{t "pilot_cc_table1_col3"}}</th>
+      <th scope="col">{{t "pilot_cc_table1_col4"}}</th>
+      <th scope="col">{{t "pilot_cc_table1_col5"}}</th>
+      <th scope="col">{{t "pilot_cc_table1_col6"}}</th>
+    </tr>
+  </thead>
+    <tbody>
+        {{#each viewData.activeGroups}}
+            <tr>
+            <th>{{n_id}}</th> 
+            <td><a class="nav-link active" aria-current="page" href="/org-pilot/viewCandidates?lng={{currentLng}}&role={{../viewData.user.s_role}}&token={{../viewData.user.s_id}}&group={{s_id_internal_group}}"><strong></strong>{{s_id_internal_group}}</strong></a></td>
+            <td>{{d_date_start}}</td>
+            <td>{{d_date_end}}</td>
+            <td>{{s_group_description}}</td>
+            <td>{{n_candidates}}</td>
+            <td> 
+                <a class="nav-link active" aria-current="page" href="/org-pilot/addCandidate?lng={{currentLng}}&role={{../viewData.user.s_role}}&token={{../viewData.user.s_id}}&group={{s_id_internal_group}}">{{t "pilot_cc_table1_action1"}}</a>
+                <a class="nav-link active" aria-current="page" href="/org-pilot/addList?lng={{currentLng}}&role={{../viewData.user.s_role}}&token={{../viewData.user.s_id}}&group={{s_id_internal_group}}">{{t "pilot_cc_table1_action2"}}</a>
+            </td>
+            </tr>
+        {{else}}
+            <tr>
+            <td colspan="5" class="text-center text-muted py-3">
+                {{t "pilot_cc_msg4"}}
+            </td>
+            </tr>
+        {{/each}}  
+    </tbody>
+</table>
+{{/if}}
+
+{{#if viewData.viewCandidates}}
+  <br>
+  <h2>{{t "pilot_cc_h2"}}</h2>
+<span> <a class="btn btn-outline-secondary btn-sm" aria-current="page" href="/org-pilot/start?lng={{currentLng}}&role={{viewData.user.s_role}}&token={{viewData.user.s_id}}">{{t "pilot_cc_ahref1"}}</a> </span>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">{{t "pilot_cc_table2_col1"}}</th>
+      <th scope="col">{{t "pilot_cc_table2_col2"}}</th>
+      <th scope="col">{{t "pilot_cc_table2_col3"}}</th>
+      <th scope="col">Przeczytano e-mail?</th>
+      <th scope="col">{{t "pilot_cc_table1_col6"}}</th>      
+      <th scope="col">{{t "pilot_cc_table2_col4"}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each viewData.activeCandidates}}
+        <tr>
+        <th>{{n_id}}</th> 
+        <td><strong>{{s_id_internal_group}}</strong></td>
+        <td>{{s_name}}</td>
+        <td>{{s_surname}}</td>
+        <td>{{#if b_safety_breafing}} <span class="text-success fw-bold">{{t 'Tak'}}</span>{{else}}<span class="text-danger fw-bold">{{t 'Nie'}}</span>{{/if}}</td>
+
+        <td> 
+          <form method="POST" action="/org-pilot/removeCandidate?lng={{currentLng}}&token={{../viewData.user.s_id}}" style="display:inline;">
+            <input type="hidden" name="nId" value="{{n_id}}">
+            <input type="hidden" name="inputEmail" required value="{{s_email}}">
+            <button type="submit" class="btn btn-danger" id="btnSubmit1">Usuń</button>
+          </form>
+        </td>
+
+        <td>
+          {{#if b_send_email}}<span class="text-success fw-bold">{{t 'Tak,'}}</span>{{else}}<span class="text-danger fw-bold">{{t 'Nie,'}}</span>{{/if}} 
+          <form method="POST" action="/org-pilot/resendEmail?lng={{currentLng}}&role={{../viewData.user.s_role}}&token={{../viewData.user.s_id}}" style="display:inline;">
+            <input type="hidden" name="inputGroupId" value="{{s_id_internal_group}}">
+            <input type="hidden" name="inputQrCode" value="{{s_id_training_student}}">
+            <input type="hidden" name="inputName" value="{{s_name}}">
+            <input type="hidden" name="inputSurname" value="{{s_surname}}">
+            <input type="hidden" name="inputEmail" value="{{s_email}}">
+            <button type="submit" class="btn btn-primary" id="btnSubmit1">{{t "pilot_cc_table2_action1"}}</button>
+          </form>
+        </td>
+
+        </tr>
+    {{else}}
+        <tr>
+        <td colspan="5" class="text-center text-muted py-3">
+            {{t "pilot_cc_msg3"}}
+        </td>
+        </tr>
+    {{/each}}  
+  </tbody>
+</table>
+
+{{/if}}
+
+{{#if viewData.addGroup}}
+<form novalidate id="cabincrewForm" class="row g-3" method="POST" action="/org-pilot/addGroup?lng={{currentLng}}&role={{viewData.user.s_role}}&token={{viewData.user.s_id}}">
+    <h3>{{t "pilot_cc_form1_label0"}}</h3> <span> <a class="btn btn-outline-secondary btn-sm" aria-current="page" href="/org-pilot/start?lng={{currentLng}}&role={{viewData.user.s_role}}&token={{viewData.user.s_id}}">+ Go to Dashboard</a> </span>
+  <div class="col-md-6">
+    <label for="inputTypeGroup" class="form-label">{{t "pilot_cc_form1_label1"}}</label>
+    <input class="form-control" type="text" id="inputTypeGroup" name="inputTypeGroup" value="PILOTS" disabled>
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputInternalGroup" class="form-label">{{t "pilot_cc_form1_label2"}}</label>
+    <input type="text" class="form-control" id="inputInternalGroup" name="inputInternalGroup">
+  </div>
+    <br>
+    <hr>
+  <div class="col-12">
+    <h4>{{t "pilot_cc_form1_h4"}}</h4>
+  </div>
+  <div class="col-md-6">
+    <label for="inputDateStart" class="form-label">{{t "pilot_cc_form1_label3"}}</label>
+    <input type="datetime-local" class="form-control" id="inputDateStart" value="{{viewData.d_today}}" name="inputDateStart">
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputEndDate" class="form-label">{{t "pilot_cc_form1_label4"}}</label>
+    <input type="datetime-local" class="form-control" id="inputEndDate" value="{{viewData.d_today}}" name="inputEndDate">
+  </div>
+    <hr>
+  <div class="col-12">
+    <label for="inputGroupDescription" class="form-label">{{t "pilot_cc_form1_label5"}}</label>
+    <input type="text" class="form-control" id="inputGroupDescription" placeholder="Describe the goal of the group, room..." name="inputGroupDescription">
+  </div>
+
+  <div class="col-12">
+      <button type="submit" class="btn btn-primary" id="btnSubmit1">{{t "textBtnSubmit1"}}</button>
+  </div>
+
+</form>
+{{/if}}
+
+{{#if viewData.addCandidate}}
+<form novalidate id="candidateForm" class="row g-3" method="POST" action="/org-pilot/addCandidate?lng={{currentLng}}&role={{viewData.user.s_role}}&token={{viewData.user.s_id}}">
+    <h3>{{t "pilot_cc_form2_label0"}}</h3> <span> <a class="btn btn-outline-secondary btn-sm" aria-current="page" href="/org-pilot/start?lng={{currentLng}}&role={{viewData.user.s_role}}&token={{viewData.user.s_id}}">{{t "pilot_cc_ahref1"}}</a> </span>
+    <div class="col-md-6">
+        <label for="inputTypeGroup" class="form-label">{{t "pilot_cc_form2_label1"}}</label>
+        <input class="form-control" type="text" id="inputTypeGroup" name="inputTypeGroup" value="Pilots" disabled>
+    </div>
+
+    <div class="col-md-6">
+        <label for="inputGroupId" class="form-label">{{t "pilot_cc_form2_label2"}}</label>
+        <input type="text" class="form-control" id="inputGroupId" name="inputGroupId" value="{{viewData.selectedGroup}}" readonly>
+    </div>
+
+    <br>
+    <hr>
+    <div class="col-12">
+        <h4>{{t "e-mail struktura"}}</h4>
+    </div>
+
+  
+    <!-- Email structure -->
+    <div class="col-md-6">
+        <label for="inputSubject" class="form-label text-danger">Subject</label>
+        <input type="text" class="form-control" id="inputSubject" name="inputSubject" value="{{t "mail_candidate_subject"}} <group_name>" readonly>
+    </div>
+
+    <div class="col-md-6">
+        <label for="inputText" class="form-label text-danger">Header</label>
+        <input type="text" class="form-control" id="inputText" name="inputText" value="{{t "mail_candidate_text"}} <candidate_name>" readonly>
+    </div>
+
+    <div class="col-md-6">
+        <label for="inputBody" class="form-label text-primary">Proszę dodać treść wiadomości e-mail.</label>
+        <textarea class="form-control" id="inputBody" name="inputBody" rows="3">{{t "mail_candidate_body"}}</textarea>
+    </div>
+
+    <div class="col-md-6">
+        <label for="inputFooter" class="form-label text-danger">Footer</label>
+        <input type="text" class="form-control" id="inputFooter" name="inputFooter" value="{{t "mail_candidate_footer"}}" readonly>
+    </div>
+
+    <br>
+    <hr>
+
+    <div class="col-12">
+        <h3>{{t "pilot_cc_form2_h4"}}</h3>
+    </div>
+
+    <div class="col-md-6">
+        <label for="inputName" class="form-label">{{t "pilot_cc_form2_label3"}}*</label>
+        <input type="text" class="form-control" id="inputName" name="inputName" value="" placeholder="First name" required>
+    </div>
+
+    <div class="col-md-6">
+        <label for="inputSurname" class="form-label">{{t "pilot_cc_form2_label4"}}*</label>
+        <input type="text" class="form-control" id="inputSurname" name="inputSurname" value="" placeholder="First surnname" required>
+    </div>
+
+    <div class="col-md-6">
+        <label for="inputEmail1" class="form-label">{{t "labelInputEmail1"}}*</label>
+        <input type="email" class="form-control" id="inputEmail" name="inputEmail" required aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">{{t "emailHelpText"}}</div>
+        <div class="invalid-feedback">{{t "invalidEmailError"}}</div>
+    </div>
+
+  <div class="col-12">
+      <button type="submit" class="btn btn-primary" id="btnSubmit1">{{t "textBtnSubmit1"}}</button>
+  </div>
+
+</form>
+
+{{/if}}
+
+{{#if viewData.addList}}
+<form novalidate id="listForm" enctype="multipart/form-data" class="row g-3" method="POST" action="/org-pilot/addList?lng={{currentLng}}&role={{viewData.user.s_role}}&token={{viewData.user.s_id}}">
+  <h3>{{t "pilot_cc_form2_label6"}}</h3> <span> <a class="btn btn-outline-secondary btn-sm" aria-current="page" href="/org-pilot/start?lng={{currentLng}}&role={{viewData.user.s_role}}&token={{viewData.user.s_id}}">{{t "pilot_cc_ahref1"}}</a> </span>
+  <div class="col-md-6">
+      <label for="inputTypeGroup" class="form-label">{{t "pilot_cc_form2_label1"}}</label>
+      <input class="form-control" type="text" id="inputTypeGroup" name="inputTypeGroup" value="Pilots" disabled>
+  </div>
+
+  <div class="col-md-6">
+      <label for="inputGroupId" class="form-label">{{t "pilot_cc_form2_label2"}}</label>
+      <input type="text" class="form-control" id="inputGroupId" name="inputGroupId" value="{{viewData.selectedGroup}}" readonly>
+  </div>
+
+  <br>
+  <hr>
+
+  <div class="col-12">
+      <h4>{{t "e-mail struktura"}}</h4>
+  </div>
+
+ 
+  <!-- Email structure -->
+  <div class="col-md-6">
+      <label for="inputSubject" class="form-label text-danger">Subject</label>
+      <input type="text" class="form-control" id="inputSubject" name="inputSubject" value="{{t "mail_candidate_subject"}} <group_name>" readonly>
+  </div>
+
+  <div class="col-md-6">
+      <label for="inputText" class="form-label text-danger">Header</label>
+      <input type="text" class="form-control" id="inputText" name="inputText" value="{{t "mail_candidate_text"}} <candidate_name>" readonly>
+  </div>
+
+  <div class="col-md-6">
+      <label for="inputBody" class="form-label text-primary">Proszę dodać treść wiadomości e-mail.</label>
+      <textarea class="form-control" id="inputBody" name="inputBody" rows="3">{{t "mail_candidate_body"}}</textarea>
+  </div>
+
+  <div class="col-md-6">
+      <label for="inputFooter" class="form-label text-danger">Footer</label>
+      <input type="text" class="form-control" id="inputFooter" name="inputFooter" value="{{t "mail_candidate_footer"}}" readonly>
+  </div>
+
+  <br>
+  <hr>
+
+  <div class="col-12">
+      <h4>{{t "pilot_cc_form2_h4"}}</h4>
+  </div>
+
+  <!-- Selector Excel file -->
+  <div class="mb-3">
+    <label for="excelFile" class="form-label fw-bold">{{t "pilot_cc_form2_label7"}} (.xlsx):</label>
+    <input type="file" id="excelFile" name="excelFile" class="form-control" accept=".xlsx" required />
+    <div class="form-text">{{t "pilot_cc_form2_label8"}}</b></div>
+  </div>
+ 
+  <div class="col-12">
+      <button type="submit" class="btn btn-primary" id="btnSubmit1">{{t "textBtnSubmit1"}}</button>
+  </div>
+
+</form>
+
+
+  {{#if viewData.alertData.show}}
+
+    <div class="alert alert-{{viewData.alertData.type}} shadow-sm p-4 my-3" role="alert">
+      <h4 class="alert-heading">Raport podsumowujący</h4>
+      <hr>
+      <ul class="mb-2">
+        <li><b>Kandydaci przetworzeni w bazie danych:</b> {{viewData.alertData.dbCount}}</li>
+        <li><b>E-maile zostały pomyślnie wysłane:</b> {{viewData.alertData.mailsSent}}</li>
+      </ul>
+
+      <!-- If email error, show the list -->
+      {{#if viewData.alertData.failedEmails.length}}
+        <div class="mt-3 p-3 bg-white rounded border border-warning">
+          <p class="text-danger fw-bold mb-2">
+            ⚠️ Poniższe e-mail {{viewData.alertData.mailsFailed}} nie udało się dostarczyć:
+          </p>
+          <ul class="mb-0 text-dark">
+            {{#each viewData.alertData.failedEmails}}
+              <li><code>{{this}}</code></li>
+            {{/each}}
+          </ul>
+        </div>
+      {{/if}}
+    </div>
+
+
+  {{/if}}
+
+
+
+{{/if}}
+
+
+<div class="toast-container" style="position: absolute; top: 10px; right: 10px;" id="myToast">
+    <div class="{{viewData.toastClass}}">
+        <div class="toast-body">
+            {{t viewData.toastMessage}}
+        </div>
+    </div>
+</div>
+
+<script>
+  function myToast(){
+      //alert("Page is loaded");
+      var element = document.getElementById("myToast");
+
+      /* Create toast instance */
+      var myToast = new bootstrap.Toast(element, {
+          delay: 3000
+      });
+      myToast.show();
+  };
+
+
+  //========== Date time picker
+  document.addEventListener('DOMContentLoaded', () => {
+    // Generate YYYY-MM-DDTHH:mm for 'min' Start Date
+    const now = new Date();
+    now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+    const minDateTime = now.toISOString().slice(0, 16);
+
+    const startDateInput = document.getElementById('inputDateStart');
+    const endDateInput = document.getElementById('inputEndDate');
+
+    if (startDateInput) startDateInput.min = minDateTime;
+    
+    // End Date cannot be less that Start Date
+    startDateInput?.addEventListener('change', (e) => {
+      if (endDateInput) endDateInput.min = e.target.value;
+    });
+  });    
+
+</script>
