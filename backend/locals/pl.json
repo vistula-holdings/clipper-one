@@ -67,7 +67,7 @@
     "mail_candidate_text":"Szanowny/Szanowna",
     "mail_candidate_body":"Niniejsza wiadomość stanowi potwierdzenie Państwa udziału w naszym szkoleniu. W załączniku do tej wiadomości znajduje się kod QR umożliwiający wstęp do centrum szkoleniowego. Nazwa grupy:",
     "mail_candidate_footer":"Zeskanowanie kodu QR uznaje się za potwierdzenie zapoznania się z | Safety Breefing |. ",
-    "mail_candidate_url":"http://localhost:3500/confirm-participation/start?lng=pl",
+    "mail_candidate_url":"https://clipper-one.eatc.pl/confirm-participation/start?lng=pl",
 
     "welcome_page":"WELCOME PAGE <-- DO NOT MODIFY",
     "welcome_p1":"Twoje dane zostały zapisane prawidłowo, zgodnie z polityką RODO!",
