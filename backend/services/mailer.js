@@ -5,14 +5,30 @@ const QRCode = require('qrcode');
 const path = require('path');
 
 // Setup Gmail transport using SSL (port 465)
+console.log('================== .ENV file ================');
+console.log('User email: ', process.env.SMTP_USER);
+console.log('=============================================');
 const transporter = nodemailer.createTransport({
+  pool: true,
+  maxConnections: 1,
+  maxMessages: 100,
+  rateDelta: 1000,
   host: process.env.SMTP_HOST,
   port: parseInt(process.env.SMTP_PORT),
-  secure: true, // true for port 465 (SSL)
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
+  secure: false, // process.env.SMTP_SECURE === 'true', // ('false === 'true' = false)true for port 465 (SSL), false for port  587
+//  auth: {
+//    user: process.env.SMTP_USER,
+//    pass: process.env.SMTP_PASS,
+//  },
+  tls:{
+	minVersion: 'TLSv1.2',
+	rejectUnauthorized: false // To avoid certifications
   },
+	family: 4, // Force IPv4
+	//Timeout from email server
+	connectionTimeout: 5000,
+	greetingTimeout: 5000,
+	socketTimeout: 10000
 });
 
 const MailerService = {
@@ -54,7 +70,7 @@ const MailerService = {
       });
       
       // 1.1 Prepare path to bring the pdf file
-      const pdfPath = path.join(__dirname, 'assets', 'attachments', 'eatc_safety_breafing.pdf');
+      const pdfPath = path.join(__dirname, 'assets', 'attachments', 'eatc_safety_briefing.pdf');
 
       const mailOptions = {
         from: `"Clipper-one EATC" <${process.env.SMTP_USER}>`,
@@ -71,6 +87,11 @@ const MailerService = {
           <p style="font-size: 16px; color: #333;">${i18next.t('mail_candidate_text', {lng})}, <strong>${candidateName}</strong>,</p>
           <p style="font-size: 15px; color: #555; line-height: 1.5;">
             ${mailBody}
+
+		<!-- QR Code inserted into the body of the email -->
+		<div style="text-align: center; margin: 20px 0;">
+			<img src="cid:generated-QR-Code" alt="QR Code" style="width: 220px; height: 220px; border: 1px solid #ddd; border-radius: 8px padding: 5px"/>
+		</div>
           </p>
           <div style="background-color: #e7f1ff; padding: 15px; text-align: center; font-size: 18px; font-weight: bold; color: #0d6efd; margin: 20px 0; border-radius: 5px;">
             ${groupName}
@@ -86,12 +107,14 @@ const MailerService = {
         {
           filename: `QR_${QrCode}.png`,
           content: qrBuffer,
+		contentType: 'image/png',
           cid: 'generated-QR-Code'
         },
         // Attach PDF
         {
-          filename: 'Instrukcja Candidat Safety Breafing', // Visible name
-          path: pdfPath
+          filename: 'Instrukcja Candidat Safety Briefing.pdf', // Visible name
+          path: pdfPath,
+		contentType: 'application/pdf'
         }
       ]
       };

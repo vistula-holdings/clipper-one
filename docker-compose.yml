@@ -11,7 +11,9 @@ services:
     # DB configuration
     environment:
       - PORT=3500
-      - DB_HOST=host.docker.internal # Mysql outside Docker and access to Windows locally
+      - DB_HOST=172.17.0.1 # Mysql outside Docker and access to Windows locally
       - DB_USER=admin
       - DB_PASSWORD=12qwasZX$
       - DB_NAME=clipper
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

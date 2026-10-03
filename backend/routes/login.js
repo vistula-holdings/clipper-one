@@ -37,7 +37,9 @@ router.post('/request-code/:p_action', async (req, res, next) => {
     // STARTER-KIT: 
     // Nodemailer to send email.
     // For now, use the console to show code:
-    await MailerService.sendVerificationCode(email, code, req.language);
+    MailerService.sendVerificationCode(email, code, req.language)
+	.then(() => console.log(`[EMAIL SENT ] Email sent succesfully to ${email}`))
+	.catch((err) => console.error(`[EMAIL ERROR ] Fail to send email to ${email}:`, err.message));
 
     console.log(`\n============== [EMAIL SIMULATOR] ==============`);
     console.log(`To: ${email}`);
