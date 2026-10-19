@@ -70,7 +70,7 @@ const MailerService = {
       });
       
       // 1.1 Prepare path to bring the pdf file
-      const pdfPath = path.join(__dirname, 'assets', 'attachments', 'eatc_safety_briefing.pdf');
+      const pdfPath = path.join(__dirname, 'assets', 'attachments', 'EATC_SBM_Issue_2_1.pdf');
 
       const mailOptions = {
         from: `"Clipper-one EATC" <${process.env.SMTP_USER}>`,
@@ -112,7 +112,7 @@ const MailerService = {
         },
         // Attach PDF
         {
-          filename: 'Instrukcja Candidat Safety Briefing.pdf', // Visible name
+          filename: 'Safety Briefing Manual.pdf', // Visible name
           path: pdfPath,
 		contentType: 'application/pdf'
         }

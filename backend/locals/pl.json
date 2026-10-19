@@ -4,24 +4,24 @@
     "option2":"Zaloguj się",
     "option3":"Wyloguj się",
     "option9":"Wybierz język",
-    
+   
     "index":"INDEX PAGE <-- NIE MODYFIKOWAĆ",
-    "app_name":"PL BACKEND - STARTER KIT",
-    "app_title":"Starter-Kit package",
-    "app_slogan":"Witaj w STARTER-KIT 2026",
+    "app_name":"PL CLIPPER ONE",
+    "app_title":"Clipper One",
+    "app_slogan":"Witaj w CLIPPER ONE 2026",
     "app_lang":"Język polski",
     "app_flag":"https://flagsapi.com/PL/shiny/64.png",
 
     "cards":"CARDS ON THE INDEX PAGE <-- NIE MODYFIKOWAĆ",
     "card1":"CARD1",
     "card_title1":"Rola użytkownika",
-    "card_text1":"Przypisz rolę użytkownikom aplikacji internetowej.",
+    "card_text1":"Przypisz rolę użytkownikom aplikacji.",
     "card_ref1":"#",
     "card_button1":"Dalej",
-    
+   
     "card2":"CARD2",
     "card_title2":"Raport",
-    "card_text2":"Wydrukuj raport potwierdzonych kandydatów (zarówno pilotów lub stewardessy).",
+    "card_text2":"Wydrukuj raport potwierdzonych kandydatów.",
     "card_ref2":"#",
     "card_button2":"Dalej",
 
@@ -31,17 +31,17 @@
     "warningToastMessage":"UWAGA, adres e-mail użytkownika jest zduplikowany.",
     "errorToastMessage":"BŁĄD, dane nie zostały zapisane! Spróbuj ponownie.",
     "loginToastMessage":"ZALOGUJ SIĘ, zaloguj się do aplikacji!",
-    "listSuccessToastMessage":"Wprowadzanie kandydatów z pliku przebiegło pomyślnie.",
+    "listSuccessToastMessage":"Wprowadzenie danych z pliku przebiegło pomyślnie.",
     "listErrorToastMessage":"Wymagana jest nazwa grupy lub plik Excel jest nieprawidłowy bądź go brakuje.",
-    "excelErrorToastMessage":"Błąd podczas przetwarzania pliku Excel. Plik nie zawiera poprawnych wierszy ani kolumn.",
-    "mailSuccessToastMessage":"SUKCES, wiadomość wysłana bezbłędnie.",
+    "excelErrorToastMessage":"Błąd podczas przetwarzania pliku Excel. Plik nie zawiera poprawnych wierszy ani/lub kolumn.",
+    "mailSuccessToastMessage":"SUKCES, wiadomość została wysłana.",
     "mailWarningToastMessage":"UWAGA, adres e-mail użytkownika jest zduplikowany albo nie istnieje.",
-    "mailErrorToastMessage":"BŁĄD, Wystąpił błąd podczas przygotowywania lub wysyłania wiadomości e-mail użytkownika.",
-    
+    "mailErrorToastMessage":"BŁĄD, Wystąpił błąd podczas przygotowywania lub wysyłania wiadomości e-mail do użytkownika.",
+   
     "login":"LOGIN PAGE <-- NIE MODYFIKOWAĆ",
     "checkbox_text":"Jestem z IT",
     "labelInputEmail1":"Twój adres e-mail",
-    "emailHelpText":"Zgodnie z RODO nigdy nie udostępnimy Twojego adresu e-mail nikomu innemu.",
+    "emailHelpText":"Twoje dane osobowe przetwarzane są zgodnie z polityką RODO.",
     "labelInputPassword1":"Utwórz hasło",
     "textBtnSubmit1":"Dalej",
     "invalidEmailError": "Proszę podać poprawny adres e-mail.",
@@ -58,21 +58,21 @@
     "error_email_required": "Adres e-mail jest wymagany.",
 
     "mail_service":"NODEMAILER CONFIGURATION <-- NIE MODYFIKOWAĆ",
-    "mail_subject":"Twój kod weryfikacyjny logowania",
-    "mail_text":"To jest Twój kod weryfikacyjny. Wygaśnie za 15 minut.",
+    "mail_subject":"Twój kod weryfikacyjny",
+    "mail_text":"Twój kod weryfikacyjny, wygaśnie za 15 minut.",
     "mail_title":"Kod weryfikacyjny",
     "mail_body":"Aby dokończyć logowanie, użyj następującego 6-cyfrowego kodu bezpieczeństwa:",
     "mail_footer":"Ten kod jest ważny przez 15 minut. Jeśli nie prosiłeś o niego, zignoruj tę wiadomość e-mail.",
     "mail_candidate_subject":"Powiadomienie o udziale, grupa: ",
     "mail_candidate_text":"Szanowny/Szanowna",
     "mail_candidate_body":"Niniejsza wiadomość stanowi potwierdzenie Państwa udziału w naszym szkoleniu. W załączniku do tej wiadomości znajduje się kod QR umożliwiający wstęp do centrum szkoleniowego. Nazwa grupy:",
-    "mail_candidate_footer":"Zeskanowanie kodu QR uznaje się za potwierdzenie zapoznania się z | Safety Breefing |. ",
+    "mail_candidate_footer":"Zeskanowanie kodu QR jest równoznaczne z potwierdzeniem zapoznania się z | Safety Brefing Manual oraz Klauzulą RODO |. ",
     "mail_candidate_url":"https://clipper-one.eatc.pl/confirm-participation/start?lng=pl",
 
     "welcome_page":"WELCOME PAGE <-- DO NOT MODIFY",
     "welcome_p1":"Twoje dane zostały zapisane prawidłowo, zgodnie z polityką RODO!",
     "welcome_p2":"O Twoim profilu...",
-    "welcome_p3":"Obecnie nie przypisano Ci jeszcze żadnej roli. Administrator projektu powinien zweryfikować Twój profil i przypisać rolę, zanim będziesz mógł zarządzać grupami i kandydatami.",
+    "welcome_p3":"Obecnie nie przypisano Ci żadnej roli. Administrator zweryfikuje Twój profil i przypisze Ci rolę, abyś mógł zarządzać grupami i kandydatami.",
     "welcome_p4":"Proszę czekać na powiadomienie e-mail.",
     "text_ref":"Zamknij sesję",
 
@@ -94,14 +94,14 @@
     "pilot_cc_table2_col2":"Imię",
     "pilot_cc_table2_col3":"Nazwisko",
     "pilot_cc_table2_col4":"Czy kandydat został powiadomiony?",
-    "pilot_cc_table2_action1":"Wyślij ponownie?",
+    "pilot_cc_table2_action1":"Wyślij ponownie",
     "pilot_cc_msg1":"+ Utwórz grupę",
     "pilot_cc_msg2":"Nie znaleziono aktywnej grupy Pilotów do planowania",
     "pilot_cc_msg3":"Nie znaleziono aktywnych Kandydatów na szkolenie",
     "pilot_cc_msg4":"Nie znaleziono aktywnej grupy Personelu Pokładowego do planowania",
 
     "pilot_cc_form1_label0":"Utwórz grupę",
-    "pilot_cc_form1_label1":"Rodzaj grupy", 
+    "pilot_cc_form1_label1":"Rodzaj grupy",
     "pilot_cc_form1_label2":"ID Grupy",
     "pilot_cc_form1_h4":"Okres ważności grupy",
     "pilot_cc_form1_label3":"Data rozpoczęcia",
@@ -109,7 +109,7 @@
     "pilot_cc_form1_label5":"Opis i lokalizacja grupy",
 
     "pilot_cc_form2_label0":"Dodaj kandydatów",
-    "pilot_cc_form2_label1":"Rodzaj grupy", 
+    "pilot_cc_form2_label1":"Rodzaj grupy",
     "pilot_cc_form2_label2":"Wewnętrzne ID",
     "pilot_cc_form2_h4":"Dodaj informacje o kandydacie",
     "pilot_cc_form2_label3":"Imię",
@@ -121,7 +121,7 @@
 
     "user_h4":"Panel administratora",
     "user_ahref1":"Przejdź do panelu sterowania",
-    "user_label1":"Nie znaleziono nowych użytkowników w bazie danych", 
+    "user_label1":"Nie znaleziono nowych użytkowników w bazie danych",
     "user_label2":"Nie znaleziono użytkowników systemu w bazie danych",
     "user_label3":"Nowi użytkownicy",
     "user_label4":"Użytkownicy systemu",
@@ -155,4 +155,4 @@
     "admin_report_msg2":"Nie znaleziono aktywnej grupy Pilotów do planowania",
     "admin_report_msg3":"Nie znaleziono aktywnych Kandydatów na szkolenie",
     "admin_report_msg4":"Nie znaleziono aktywnej grupy Personelu Pokładowego do planowania"
-}
+} 
