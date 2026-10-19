@@ -100,7 +100,7 @@ const MailerService = {
             ${i18next.t('mail_candidate_footer', { lng })}
           </p>
           <p text-align: center;>
-            <a href="${i18next.t('mail_candidate_url',{lng})}">${i18next.t('mail_candidate_url',{lng})}</a>
+            
           </p>
         </div>`,
         attachments: [
@@ -164,3 +164,6 @@ const MailerService = {
 };
 
 module.exports = MailerService;
+
+// This sintax was removed from e-mail footer.
+// <a href="${i18next.t('mail_candidate_url',{lng})}">${i18next.t('mail_candidate_url',{lng})}</a>
