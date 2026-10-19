@@ -66,7 +66,7 @@
     "mail_candidate_subject":"Notificación de participación",
     "mail_candidate_text":"Estimada/o",
     "mail_candidate_body":"Este correo electrónico confirma su participación en nuestra formación. Adjunto a este correo electrónico encontrará un código QR que le da acceso al centro de formación. Nombre del grupo:",
-    "mail_candidate_footer":"Al escanear el código QR, confirma que ha leído el Manual de Información de Seguridad y la cláusula RGPD.",
+    "mail_candidate_footer":"Bienvenido a EATC, al escanear el código QR, confirma que ha leído el Manual de Información de Seguridad y la cláusula RGPD.",
     "mail_candidate_url":"https://clipper-one.eatc.pl/confirm-participation/start?lng=es",
 
     "welcome_page":"WELCOME PAGE <-- DO NOT MODIFY",

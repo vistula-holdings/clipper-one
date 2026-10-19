@@ -1,3 +1,10 @@
+### Updates
+- 2026-09-29 Update server with app and database
+- 2026-09-30 Update server Docker, web app running.
+- 2026-10-05 Update web app: mailer service with new parameters.
+- 2026-10-19 Update web app: polski and espanol langs.
+- 2026-10-20 Update web app: email footer for candidates, it was removed labels status from column "Read email", "Candidate was notified?".
+
 # Clipper-One Backend
 
 Production-ready backend service for candidate management, QR code processing, automated notifications, and reporting.
@@ -66,3 +73,6 @@ Production Architecture Notes
 Application process management is handled directly by Docker's restart policy (restart: always), replacing legacy PM2 process management.
 
 Nginx acts as the reverse proxy handling SSL termination via Certbot and routing traffic to the Node.js application container.
+
+
+

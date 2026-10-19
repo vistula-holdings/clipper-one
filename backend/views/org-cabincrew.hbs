@@ -50,9 +50,9 @@
       <th scope="col">{{t "pilot_cc_table2_col1"}}</th>
       <th scope="col">{{t "pilot_cc_table2_col2"}}</th>
       <th scope="col">{{t "pilot_cc_table2_col3"}}</th>
-      <th scope="col">Przeczytano e-mail?</th>
+      <!-- <th scope="col">Przeczytano e-mail?</th> -->
       <th scope="col">{{t "pilot_cc_table1_col6"}}</th>      
-      <th scope="col">{{t "pilot_cc_table2_col4"}}</th>
+      <th scope="col"> </th>
     </tr>
   </thead>
   <tbody>
@@ -62,7 +62,7 @@
         <td><strong>{{s_id_internal_group}}</strong></td>
         <td>{{s_name}}</td>
         <td>{{s_surname}}</td>
-        <td>{{#if b_safety_breafing}} <span class="text-success fw-bold">{{t 'Tak'}}</span>{{else}}<span class="text-danger fw-bold">{{t 'Nie'}}</span>{{/if}}</td>
+        <!-- <td>{{#if b_safety_breafing}} <span class="text-success fw-bold">{{t 'Tak'}}</span>{{else}}<span class="text-danger fw-bold">{{t 'Nie'}}</span>{{/if}}</td> -->
 
         <td> 
           <form method="POST" action="/org-cabincrew/removeCandidate?lng={{currentLng}}&token={{../viewData.user.s_id}}" style="display:inline;">
@@ -73,7 +73,7 @@
         </td>
 
         <td>
-          {{#if b_send_email}}<span class="text-success fw-bold">{{t 'Tak,'}}</span>{{else}}<span class="text-danger fw-bold">{{t 'Nie,'}}</span>{{/if}} 
+          <!-- {{#if b_send_email}}<span class="text-success fw-bold">{{t 'Tak,'}}</span>{{else}}<span class="text-danger fw-bold">{{t 'Nie,'}}</span>{{/if}} -->
           <form method="POST" action="/org-cabincrew/resendEmail?lng={{currentLng}}&role={{../viewData.user.s_role}}&token={{../viewData.user.s_id}}" style="display:inline;">
             <input type="hidden" name="inputGroupId" value="{{s_id_internal_group}}">
             <input type="hidden" name="inputQrCode" value="{{s_id_training_student}}">

@@ -66,7 +66,7 @@
     "mail_candidate_subject":"Powiadomienie o udziale, grupa: ",
     "mail_candidate_text":"Szanowny/Szanowna",
     "mail_candidate_body":"Niniejsza wiadomość stanowi potwierdzenie Państwa udziału w naszym szkoleniu. W załączniku do tej wiadomości znajduje się kod QR umożliwiający wstęp do centrum szkoleniowego. Nazwa grupy:",
-    "mail_candidate_footer":"Zeskanowanie kodu QR jest równoznaczne z potwierdzeniem zapoznania się z | Safety Brefing Manual oraz Klauzulą RODO |. ",
+    "mail_candidate_footer":"Witamy EATC, zeskanowanie kodu QR jest równoznaczne z potwierdzeniem zapoznania się z | Safety Brefing Manual oraz Klauzulą RODO |. ",
     "mail_candidate_url":"https://clipper-one.eatc.pl/confirm-participation/start?lng=pl",
 
     "welcome_page":"WELCOME PAGE <-- DO NOT MODIFY",
