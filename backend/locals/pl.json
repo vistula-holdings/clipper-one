@@ -43,7 +43,7 @@
     "labelInputEmail1":"Twój adres e-mail",
     "emailHelpText":"Twoje dane osobowe przetwarzane są zgodnie z polityką RODO.",
     "labelInputPassword1":"Utwórz hasło",
-    "textBtnSubmit1":"Dalej",
+    "textBtnSubmit1":"Zaloguj się",
     "invalidEmailError": "Proszę podać poprawny adres e-mail.",
     "invalidPasswordError": "Hasło jest wymagane.",
     "showPasswordText": "Pokaż",

@@ -8,7 +8,7 @@ const MailerService = require('../services/mailer');
 
 /* GET users listing. */
 router.get('/:p_action', function(req, res, next) {
-  res.render('login',{});
+  res.render('login',{notLoginPage: false});
 });
 
 /* POST users listing. */
@@ -17,7 +17,7 @@ router.post('/request-code/:p_action', async (req, res, next) => {
   const { email } = req.body;
 
   if (!email) {
-    return res.render('login', { toastKey: 'error_email_required', toastClass: 'toast text-bg-danger', showToast: true });
+    return res.render('login', { toastKey: 'error_email_required', toastClass: 'toast text-bg-danger', showToast: true, notLoginPage: false });
   }
 
   try {

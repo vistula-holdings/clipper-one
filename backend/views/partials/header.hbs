@@ -1,29 +1,39 @@
-<div class="logo-container">
-  <img src="/images/LOGO EATC.png" alt="Logo Enterair Training Center" class="logo-img">
-</div>
 {{#unless viewData.confirmParticipation}}
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
+          {{#if (eq viewData.user.s_role "admin")}}
+            <a class="nav-link" href="/index/start?lng={{currentLng}}"> {{t "option1"}} | </a>
+          {{else if (eq viewData.user.s_role "org-pilot")}}
+            <a class="nav-link" href="/org-pilot/start?lng={{currentLng}}"> {{t "option1"}} | </a>
+          {{else if (eq viewData.user.s_role "org-cabincrew")}}
+              <a class="nav-link" href="/org-cabincrew/start?lng={{currentLng}}"> {{t "option1"}} | </a>
+          {{/if}}
+        </li>
+        <li class="nav-item">
 
           {{#if (eq viewData.user.s_role "admin")}}
-            <a class="nav-link" href="/index/start?lng={{currentLng}}">🏠 {{t "option1"}}</a>
+            <a class="nav-link" href="/logout/start?lng={{currentLng}}">{{t "option3"}}</a>
           {{else if (eq viewData.user.s_role "org-pilot")}}
-            <a class="nav-link" href="/org-pilot/start?lng={{currentLng}}">✈️ {{t "option1"}}</a>
+            <a class="nav-link" href="/logout/start?lng={{currentLng}}">{{t "option3"}}</a>
           {{else if (eq viewData.user.s_role "org-cabincrew")}}
-            <a class="nav-link" href="/org-cabincrew/start?lng={{currentLng}}">🧑‍✈️ {{t "option1"}}</a>
+            <a class="nav-link" href="/logout/start?lng={{currentLng}}">{{t "option3"}}</a>
           {{/if}}
         </li>
       </ul>
 
+      <!--
       <span class="nav-item">
         <a class="nav-link" href="/login/start?lng={{currentLng}}">{{t "option2"}}</a>
       </span>
+      -->
+      {{#if notLoginPage}}
       <span class="nav-item">
         <a class="nav-link" href="/logout/start?lng={{currentLng}}">{{t "option3"}}</a>
       </span>
+      {{/if}}
 
       <span class="nav-item dropdown ms-auto">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

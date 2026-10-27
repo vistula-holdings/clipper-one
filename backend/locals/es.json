@@ -43,7 +43,7 @@
     "labelInputEmail1":"Su correo electronico",
     "emailHelpText":"Sus datos personales se procesan de acuerdo con la política del RGPD.",
     "labelInputPassword1":"Crear contraseña",
-    "textBtnSubmit1":"Aceptar",
+    "textBtnSubmit1":"Ingresar",
     "invalidEmailError": "Introduzca una dirección de correo válida.",
     "invalidPasswordError": "Se requiere una contraseña.",
     "showPasswordText": "Mostrar",

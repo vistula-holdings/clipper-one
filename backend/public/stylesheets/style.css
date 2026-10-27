@@ -10,15 +10,15 @@ a {
 .logo-container {
   display: flex;             
   align-items: center;       
-  justify-content: flex-start; 
-  padding: 5px 10px;        
+  justify-content: center; 
   background-color: #ffffff; 
   width: 100%;               
-  box-sizing: border-box;    
+  margin: 20px 0;    
 }
 
 .logo-img {
-  height: 40px;              
-  width: auto;               
-  object-fit: contain;       
+  height: auto;              
+  width: 250px; 
+  max-width: 90%;              
+  display: block;       
 }

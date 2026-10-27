@@ -1,9 +1,10 @@
 <form novalidate id="loginForm" method="POST" action="/login/request-code/start">
+  <!--
   <div class="mb-3 form-check">
     <input type="checkbox" class="form-check-input" id="togglePasswordFields">
     <label class="form-check-label" for="togglePasswordFields">{{t "checkbox_text"}}</label>
   </div>
-
+  -->
   <div class="mb-3">
     <label for="inputEmail1" class="form-label">{{t "labelInputEmail1"}}</label>
     <input type="email" class="form-control" id="inputEmail1" name="email" required aria-describedby="emailHelp">
@@ -11,7 +12,7 @@
     <div class="invalid-feedback">{{t "invalidEmailError"}}</div>
   </div>
 
-
+  <!--
   <div class="mb-3 d-none" id="passwordSection">
     <label for="inputPassword1" class="form-label">{{t "labelInputPassword1"}}</label>
     <div class="input-group">
@@ -22,7 +23,8 @@
     </div>
     <div class="invalid-feedback">{{t "invalidPasswordError"}}</div>
   </div>
-
+  -->
+  
   <button type="submit" class="btn btn-primary" id="btnSubmit1">{{t "textBtnSubmit1"}}</button>
 </form>
 
