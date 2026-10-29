@@ -60,6 +60,12 @@ const CabinCrewModel = {
     return rows || null; // Feedback update
   },
 
+  async removeGroup(nId){
+    const query = 'update training_groups set b_status = 0 where n_id = ?';
+    const rows = await db.execute(query, [nId]);
+    return rows || null; // Feedback update
+  },
+
   async updateMailStatus(groupName, email){
     const query = 'update training_candidates set b_send_email = 1 where s_id_internal_group = ? and s_email = ?';
     const rows = await db.execute(query, [groupName, email]);

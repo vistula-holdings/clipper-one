@@ -24,8 +24,9 @@
             <td>{{s_group_description}}</td>
             <td>{{n_candidates}}</td>
             <td> 
-                <a class="nav-link active" aria-current="page" href="/org-pilot/addCandidate?lng={{currentLng}}&role={{../viewData.user.s_role}}&token={{../viewData.user.s_id}}&group={{s_id_internal_group}}">{{t "pilot_cc_table1_action1"}}</a>
-                <a class="nav-link active" aria-current="page" href="/org-pilot/addList?lng={{currentLng}}&role={{../viewData.user.s_role}}&token={{../viewData.user.s_id}}&group={{s_id_internal_group}}">{{t "pilot_cc_table1_action2"}}</a>
+                <a class="nav-link active" aria-current="page" style="color: blue; text-decoration: none;" href="/org-pilot/addCandidate?lng={{currentLng}}&role={{../viewData.user.s_role}}&token={{../viewData.user.s_id}}&group={{s_id_internal_group}}">{{t "pilot_cc_table1_action1"}}</a><br>
+                <a class="nav-link active" aria-current="page" style="color: green; text-decoration: none;" href="/org-pilot/addList?lng={{currentLng}}&role={{../viewData.user.s_role}}&token={{../viewData.user.s_id}}&group={{s_id_internal_group}}">{{t "pilot_cc_table1_action2"}}</a><br>
+                <a class="nav-link active" aria-current="page" style="color: red; text-decoration: none;" href="/org-pilot/removeGroup?lng={{currentLng}}&role={{../viewData.user.s_role}}&token={{../viewData.user.s_id}}&idgroup={{n_id}}">- Usun</a>
             </td>
             </tr>
         {{else}}
@@ -130,7 +131,7 @@
   </div>
 
   <div class="col-12">
-      <button type="submit" class="btn btn-primary" id="btnSubmit1">{{t "textBtnSubmit1"}}</button>
+      <button type="submit" class="btn btn-primary" id="btnSubmit1">{{t "pilot_cc_BtnSubmit1"}}</button>
   </div>
 
 </form>
@@ -202,7 +203,7 @@
     </div>
 
   <div class="col-12">
-      <button type="submit" class="btn btn-primary" id="btnSubmit1">{{t "textBtnSubmit1"}}</button>
+      <button type="submit" class="btn btn-primary" id="btnSubmit1">{{t "pilot_cc_BtnSubmit1"}}</button>
   </div>
 
 </form>
@@ -266,7 +267,7 @@
   </div>
  
   <div class="col-12">
-      <button type="submit" class="btn btn-primary" id="btnSubmit1">{{t "textBtnSubmit1"}}</button>
+      <button type="submit" class="btn btn-primary" id="btnSubmit1">{{t "pilot_cc_BtnSubmit1"}}</button>
   </div>
 
 </form>

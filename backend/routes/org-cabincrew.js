@@ -157,8 +157,26 @@ router.get('/:p_action', requireAuth, async function(req, res, next) {
         viewData.toastMessage = 'excelErrorToastMessage';
         viewData.toastClass = 'toast bg-danger text-white fade show';
         break;
+      case 'removeGroup':
+        {
+          // REMOVE GROUP
+          try{
+            await CabinCrewModel.removeGroup(req.query.idgroup);
+            console.log('CABINCREW group: ', req.query.idgroup, ' was removed');
+          } catch(error) {
+            // If the DB fails, catch the error and server continue running
+            console.error('Error query removing CABINCREW group:', error);
+            next(error);
+          }
+        }
+        const activeGroups = await CabinCrewModel.findValidGroups();
+        viewData.init = true;
+        viewData.activeGroups = activeGroups;
+        viewData.toastMessage = 'startToastMessage';
+        viewData.toastClass = 'toast bg-success text-white fade show';
+        break;
       default:
-        viewData.toastMessage = 'loginToastMessage.';
+        viewData.toastMessage = 'updateToastMessage';
         viewData.toastClass = 'toast bg-danger text-white fade show';
         break;
     }

@@ -4,6 +4,8 @@
 - 2026-10-05 Update web app: mailer service with new parameters.
 - 2026-10-19 Update web app: polski and espanol langs.
 - 2026-10-20 Update web app: email footer for candidates, it was removed labels status from column "Read email", "Candidate was notified?".
+- 2026-10-27 Update web app: header page remove Login label from menu; login page add logic var to display Logout option.
+- 2026-10-29 Update web app: Added option and functionality to remove group, added the Klausula file to email.
 
 # Clipper-One Backend
 

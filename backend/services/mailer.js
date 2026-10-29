@@ -70,7 +70,8 @@ const MailerService = {
       });
       
       // 1.1 Prepare path to bring the pdf file
-      const pdfPath = path.join(__dirname, 'assets', 'attachments', 'EATC_SBM_Issue_2_1.pdf');
+      const sbmPdfPath = path.join(__dirname, 'assets', 'attachments', 'EATC_SBM_Issue_2_1.pdf');
+      const klausulaPdfPath = path.join(__dirname, 'assets', 'attachments', 'Klauzula_do_aplikacji_EATC.pdf');
 
       const mailOptions = {
         from: `"Clipper-one EATC" <${process.env.SMTP_USER}>`,
@@ -107,14 +108,20 @@ const MailerService = {
         {
           filename: `QR_${QrCode}.png`,
           content: qrBuffer,
-		contentType: 'image/png',
+		      contentType: 'image/png',
           cid: 'generated-QR-Code'
         },
-        // Attach PDF
+        // Attach SBM PDF
         {
           filename: 'Safety Briefing Manual.pdf', // Visible name
-          path: pdfPath,
-		contentType: 'application/pdf'
+          path: sbmPdfPath,
+      		contentType: 'application/pdf'
+        },
+        // Attach Klausula PDF
+        {
+          filename: 'Klausula do Aplikacij EATC.pdf', // Visible name
+          path: klausulaPdfPath,
+      		contentType: 'application/pdf'
         }
       ]
       };
