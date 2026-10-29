@@ -99,7 +99,7 @@
 {{/if}}
 
 {{#if viewData.addGroup}}
-<form novalidate id="cabincrewForm" class="row g-3" method="POST" action="/org-pilot/addGroup?lng={{currentLng}}&role={{viewData.user.s_role}}&token={{viewData.user.s_id}}">
+<form novalidate id="pilotForm" class="row g-3" method="POST" action="/org-pilot/addGroup?lng={{currentLng}}&role={{viewData.user.s_role}}&token={{viewData.user.s_id}}">
     <h3>{{t "pilot_cc_form1_label0"}}</h3> <span> <a class="btn btn-outline-secondary btn-sm" aria-current="page" href="/org-pilot/start?lng={{currentLng}}&role={{viewData.user.s_role}}&token={{viewData.user.s_id}}">+ Go to Dashboard</a> </span>
   <div class="col-md-6">
     <label for="inputTypeGroup" class="form-label">{{t "pilot_cc_form1_label1"}}</label>
@@ -108,7 +108,8 @@
 
   <div class="col-md-6">
     <label for="inputInternalGroup" class="form-label">{{t "pilot_cc_form1_label2"}}</label>
-    <input type="text" class="form-control" id="inputInternalGroup" name="inputInternalGroup">
+    <input type="text" class="form-control" id="inputInternalGroup" name="inputInternalGroup" required>
+	<span id="textboxEmpty" style="color:red; display:none;"> Pole wymagane / Text required </span>
   </div>
     <br>
     <hr>
@@ -343,6 +344,18 @@
     startDateInput?.addEventListener('change', (e) => {
       if (endDateInput) endDateInput.min = e.target.value;
     });
-  });    
+  });
+
+ //========= Text group name not empty
+        document.getElementById('pilotForm').addEventListener('submit', function(e){
+                const inputGroup = document.getElementById('inputInternalGroup');
+                const errorSpan = document.getElementById('textboxEmpty');
+                if (inputGroup.value.trim() === ''){
+                        e.preventDefault(); //Avoid to send form via submit
+                        errorSpan.style.display = 'inline'; // Show message
+                } else {
+                        errorSpan.style.display = 'none';
+                }
+        });
 
 </script>
