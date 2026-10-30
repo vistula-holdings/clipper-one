@@ -100,6 +100,10 @@
     "pilot_cc_msg2":"No se ha encontrado ningún grupo de pilotos activo para la programación.",
     "pilot_cc_msg3":"No se han encontrado candidatos a formación activos.",
     "pilot_cc_msg4":"No se ha encontrado grupo activo para programación",
+    "pilot_cc_modal_msg1":"Enviando correo a los usuarios, espero unos segundos...",
+    "pilot_cc_modal_msg2":"Proceso de envio de correos CANCELADO!!! ",
+    "pilot_cc_modal_msg3":"Esta lista esta en proceso de carga, desea enviar los correos de este grupo? Este proceso tardara unos minutos.",
+    "pilot_cc_modal_msg4":"ni recargues la página.",
 
     "pilot_cc_form1_label0":"Crear grupo",
     "pilot_cc_form1_label1":"Tipo de grupo", 

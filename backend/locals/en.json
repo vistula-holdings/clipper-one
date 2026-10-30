@@ -100,6 +100,10 @@
     "pilot_cc_msg2":"No active Pilot group found for scheduling",
     "pilot_cc_msg3":"No active training Candidates found",
     "pilot_cc_msg4":"No active Cabin Crew group found for scheduling",
+   "pilot_cc_modal_msg1":"Sending emails to users, wait a few seconds...",
+    "pilot_cc_modal_msg2":"Process of sending email has been CANCEL!!! ",
+    "pilot_cc_modal_msg3":"This list is in process, do you want to sent emails to this group? This process requires a few minutes",
+    "pilot_cc_modal_msg4":"neither reload this page.",
 
     "pilot_cc_form1_label0":"Create group",
     "pilot_cc_form1_label1":"Group type", 

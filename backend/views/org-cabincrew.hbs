@@ -108,7 +108,7 @@
 
   <div class="col-md-6">
     <label for="inputInternalGroup" class="form-label">{{t "pilot_cc_form1_label2"}}</label>
-    <input type="text" class="form-control" id="inputInternalGroup" name="inputInternalGroup" required>
+    <input type="text" class="form-control" id="inputInternalGroup" placeholder="Proponowana: NAZWA GRUPY - RRRR" name="inputInternalGroup" required>
 	<span id="textboxEmpty" style="color: red; display: none;"> Pole wymagane / Text required </span>
   </div>
     <br>
@@ -270,7 +270,8 @@
   <div class="col-12">
       <button type="submit" class="btn btn-primary" id="btnSubmit1">{{t "pilot_cc_BtnSubmit1"}}</button>
   </div>
-
+  <span id="sendingEmail" style="color:green; display:none;"> {{t "pilot_cc_modal_msg1"}} </span>
+  <span id="notSendingEmail" style="color:red; display:none;"> {{t "pilot_cc_modal_msg2"}} </span>
 </form>
 
 
@@ -306,7 +307,7 @@
 
 {{/if}}
 
-
+<!-- Toas messages -->
 <div class="toast-container" style="position: absolute; top: 10px; right: 10px;" id="myToast">
     <div class="{{viewData.toastClass}}">
         <div class="toast-body">
@@ -315,8 +316,11 @@
     </div>
 </div>
 
+
 <script>
+  console.log("¡El script se está ejecutando correctamente!");
   function myToast(){
+    console.log('Se ejecuta Toast msg');
       //alert("Page is loaded");
       var element = document.getElementById("myToast");
 
@@ -330,6 +334,7 @@
 
   //========== Date time picker
   document.addEventListener('DOMContentLoaded', () => {
+    console.log('Se ejecuta Date picker');
     // Generate YYYY-MM-DDTHH:mm for 'min' Start Date
     const now = new Date();
     now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
@@ -346,16 +351,48 @@
     });
   });
 
-	//========= Text group name not empty
-	document.getElementById('cabincrewForm').addEventListener('submit', function(e){
-		const inputGroup = document.getElementById('inputInternalGroup');
-		const errorSpan = document.getElementById('textboxEmpty');
-		if (inputGroup.value.trim() === ''){
-			e.preventDefault(); //Avoid to send form via submit
-			errorSpan.style.display = 'inline'; // Show message
-		} else {
-			errorSpan.style.display = 'none';
-		}
-	});
+  //========= Text group name not empty
+  const pilotForm = document.getElementById('cabincrewForm');
+  if (pilotForm) {
+    console.log('Ejecutando CABIN CREW');
+    pilotForm.addEventListener('submit', function(e){
+   
+    const inputGroup = document.getElementById('inputInternalGroup');
+    const errorSpan = document.getElementById('textboxEmpty');
+    if (inputGroup.value.trim() === ''){
+      e.preventDefault(); //Avoid to send form via submit
+      errorSpan.style.display = 'inline'; // Show message
+    } else {
+      errorSpan.style.display = 'none';
+    }
+  });
 
+  }
+  
+  //========== Modal window to avoid resending emails
+  const listForm = document.getElementById('listForm');
+  if (listForm) {
+    console.log('Ejecutando LISTFORM');
+    listForm.addEventListener('submit', function(e){
+    
+    const excelFile = document.getElementById('excelFile');
+    const sendingEmailSpan = document.getElementById('sendingEmail');
+    const notSendingEmailSpan = document.getElementById('notSendingEmail');
+    if (excelFile.files.length != 0){
+      
+      const confirmar = confirm("{{t "pilot_cc_modal_msg3"}}");
+      if (!confirmar) {
+        // if user cancel, no process...
+        notSendingEmailSpan.style.display = 'inline';
+        sendingEmailSpan.style.display = 'none';
+        e.preventDefault();
+        return;
+      } else {
+        sendingEmailSpan.style.display = 'inline';
+        notSendingEmailSpan.style.display = 'none';
+      }
+    }
+  });
+  }
+  
 </script>

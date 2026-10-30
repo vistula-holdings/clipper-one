@@ -45,6 +45,16 @@ const CabinCrewModel = {
     return rows[0].count > 0; // Return true if email exists, false if zero.
   },
 
+  // Search email in active group to avoid duplicates
+  checkEmailInActiveGroup: async (email) => {
+    const [rows] = await db.query(
+      `SELECT COUNT(*) as count FROM training_candidates as tc WHERE s_email = ? AND trim(tc.s_id_internal_group) in (select trim(s_id_internal_group) from training_groups where now() between d_date_start and d_date_end)`,
+      [email]
+    );
+    return rows[0].count > 0; // Return true if email exists, false if zero.
+  },
+
+
   /**
    * Saves new candidate
    */

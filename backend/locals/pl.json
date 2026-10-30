@@ -103,7 +103,7 @@
 
     "pilot_cc_form1_label0":"Utwórz grupę",
     "pilot_cc_form1_label1":"Rodzaj grupy",
-    "pilot_cc_form1_label2":"ID Grupy",
+    "pilot_cc_form1_label2":"Nazwa grupy",
     "pilot_cc_form1_h4":"Okres ważności grupy",
     "pilot_cc_form1_label3":"Data rozpoczęcia",
     "pilot_cc_form1_label4":"Data zakończenia",
@@ -119,6 +119,10 @@
     "pilot_cc_form2_label6":"Dodaj listę kandydatów",
     "pilot_cc_form2_label7":"Wybierz plik Excel",
     "pilot_cc_form2_label8":"Plik Excel musi zawierać kolumny: Imię | Nazwisko | E-mail",
+    "pilot_cc_modal_msg1":"Wysyłanie e-mail do użytkowników, proszę chwilę zaczekać...",
+    "pilot_cc_modal_msg2":"Proces wysyłania e-mail ANULUJ!!! ",
+    "pilot_cc_modal_msg3":"Trwa listę i wysłać e-maile do tej grupy? Tej proces zajmie kilka minut. ",
+    "pilot_cc_modal_msg4":"ani nie odświeżać strony.",
 
     "user_h4":"Panel administratora",
     "user_ahref1":"Przejdź do panelu sterowania",

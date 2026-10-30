@@ -396,9 +396,9 @@ router.post('/:p_action', upload.single('excelFile'), requireAuth, async functio
             failedEmails.push(candidateEmail); // Record specific email with error
           }
 
-          // C. Pause of 2.5 secs between sendings to avoid SPAM.
+          // C. Pause of 1.5 secs between sendings to avoid SPAM.
           if (i < parsedCandidates.length - 1) {
-            await sleep(2500);
+            await sleep(1500);
           }
         }
 
