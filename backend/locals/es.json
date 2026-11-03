@@ -64,9 +64,10 @@
     "mail_body":"Para completar su inicio de sesión, utilice el siguiente código de seguridad de 6 dígitos:",
     "mail_footer":"Este código es válido durante 15 minutos. Si no lo solicitó, ignore este correo electrónico.",
     "mail_candidate_subject":"Notificación de participación",
-    "mail_candidate_text":"Estimada/o",
+    "mail_candidate_text":" ",
     "mail_candidate_body":"Este correo electrónico confirma su participación en nuestra formación. Adjunto a este correo electrónico encontrará un código QR que le da acceso al centro de formación. Nombre del grupo:",
     "mail_candidate_footer":"Bienvenido a EATC, al escanear el código QR, confirma que ha leído el Manual de Información de Seguridad y la cláusula RGPD.",
+"mail_candidate_footer2":"Welcome to EATC. By scanning this code, you acknowledge that you have reviewed and understood the contents of the EATC Safety Briefing Manual and RODO policy.",
     "mail_candidate_url":"https://clipper-one.eatc.pl/confirm-participation/start?lng=es",
 
     "welcome_page":"WELCOME PAGE <-- DO NOT MODIFY",

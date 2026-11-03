@@ -64,7 +64,7 @@
     "mail_body":"To complete your login, please use the following 6-digit security code:",
     "mail_footer":"This code is valid for 15 minutes. If you did not request it, please ignore this email.",
     "mail_candidate_subject":"Participation Notice",
-    "mail_candidate_text":"Dear Candidate",
+    "mail_candidate_text":" ",
     "mail_candidate_body":"This email is a notification regarding your application to our training center.",
     "mail_candidate_footer":"The link to confirm your participation is: ",
     "mail_candidate_url":"http://localhost:3500/confirm-participation/start?lng=pl",

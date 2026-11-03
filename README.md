@@ -1,11 +1,14 @@
 ### Updates
 - 2026-09-29 Update server with app and database
 - 2026-09-30 Update server Docker, web app running.
-- 2026-10-05 Update web app: mailer service with new parameters.
-- 2026-10-19 Update web app: polski and espanol langs.
-- 2026-10-20 Update web app: email footer for candidates, it was removed labels status from column "Read email", "Candidate was notified?".
+- 2026-10-05 Update code web app: mailer service with new parameters.
+- 2026-10-19 Update code web app: polski and espanol langs.
+- 2026-10-20 Update code web app: email footer for candidates, it was removed labels status from column "Read email", "Candidate was notified?".
 - 2026-10-27 Update web app: header page remove Login label from menu; login page add logic var to display Logout option.
-- 2026-10-29 Update web app: Added option and functionality to remove group, added the Klausula file to email.
+- 2026-10-29 Improve web app: Added option and functionality to remove group, added the Klausula file to email.
+- 2026-10-30 Improve web app: org-pilot and org-cabincrew form, group name is not allowed to be empty.
+- 2026-10-30 Improve web app: Add some notification of loading users into the app and sending emails to users.
+- 2026-11-03 Update web app: Replaced Klausurla RODO file, add a footer notification in English.
 
 # Clipper-One Backend
 

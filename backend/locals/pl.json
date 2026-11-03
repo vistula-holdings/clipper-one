@@ -64,9 +64,10 @@
     "mail_body":"Aby dokończyć logowanie, użyj następującego 6-cyfrowego kodu bezpieczeństwa:",
     "mail_footer":"Ten kod jest ważny przez 15 minut. Jeśli nie prosiłeś o niego, zignoruj tę wiadomość e-mail.",
     "mail_candidate_subject":"Powiadomienie o udziale, grupa: ",
-    "mail_candidate_text":"Szanowny/Szanowna",
+    "mail_candidate_text":" ",
     "mail_candidate_body":"Niniejsza wiadomość stanowi potwierdzenie Państwa udziału w naszym szkoleniu. W załączniku do tej wiadomości znajduje się kod QR umożliwiający wstęp do centrum szkoleniowego. Nazwa grupy:",
-    "mail_candidate_footer":"Witamy EATC, zeskanowanie kodu QR jest równoznaczne z potwierdzeniem zapoznania się z | Safety Brefing Manual oraz Klauzulą RODO |. ",
+    "mail_candidate_footer":"Witamy w EATC, zeskanowanie kodu QR jest równoznaczne z potwierdzeniem zapoznania się z | Safety Brefing Manual oraz Klauzulą RODO |. ",
+    "mail_candidate_footer2":"Welcome to EATC. By scanning this code, you acknowledge that you have reviewed and understood the contents of the EATC Safety Briefing Manual and RODO policy",
     "mail_candidate_url":"https://clipper-one.eatc.pl/confirm-participation/start?lng=pl",
 
     "welcome_page":"WELCOME PAGE <-- DO NOT MODIFY",

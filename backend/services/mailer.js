@@ -89,20 +89,25 @@ const MailerService = {
           <p style="font-size: 15px; color: #555; line-height: 1.5;">
             ${mailBody}
 
-		<!-- QR Code inserted into the body of the email -->
-		<div style="text-align: center; margin: 20px 0;">
-			<img src="cid:generated-QR-Code" alt="QR Code" style="width: 220px; height: 220px; border: 1px solid #ddd; border-radius: 8px padding: 5px"/>
-		</div>
+            <!-- QR Code inserted into the body of the email -->
+            <div style="text-align: center; margin: 20px 0;">
+              <img src="cid:generated-QR-Code" alt="QR Code" style="width: 220px; height: 220px; border: 1px solid #ddd; border-radius: 8px padding: 5px"/>
+            </div>
+          </p>
+          <p style="font-size: 12px; color: #f30ae0; text-align: center; border-top: 1px solid #eee; padding-top: 10px;">
+            Przechodźcie przez bramy pojedynczo / Pass through the gates individually
           </p>
           <div style="background-color: #e7f1ff; padding: 15px; text-align: center; font-size: 18px; font-weight: bold; color: #0d6efd; margin: 20px 0; border-radius: 5px;">
             ${groupName}
           </div>
-          <p style="font-size: 16px; color: #290af3; text-align: center; border-top: 1px solid #eee; padding-top: 10px;">
+          <p style="font-size: 10px; color: #0abdf3; text-align: center; border-top: 1px solid #eee; padding-top: 10px;">
             ${i18next.t('mail_candidate_footer', { lng })}
           </p>
-          <p text-align: center;>
-            
+
+          <p style="font-size: 10px; color: #0abdf3; text-align: center; border-top: 1px solid #eee; padding-top: 10px;">
+            ${i18next.t('mail_candidate_footer2', { lng })}
           </p>
+          
         </div>`,
         attachments: [
         {
